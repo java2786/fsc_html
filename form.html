@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(e){
+            var u = document.getElementsByName("user")[0].value
+            var p = document.getElementsByName("pwd")[0].value
+            console.log(u)
+            console.log(p)
+            
+            if(u.length > 0 && p.length > 3){
+                return true;
+            } else {
+                e.preventDefault();
+                alert("invalid")
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form onsubmit="validate(event)" action="https://www.google.com" method="post">
+        Username: <input type="text" name="user" value="demo" placeholder="Enter your name"  />
+        <br/>
+        Password: <input type="text" name="pwd" value="demo@123" placeholder="Enter your password" />
+        <br/>
+        <select name="customer" id="">
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller</option>
+        </select>
+        <button>Login</button>
+    </form>
+</body>
+</html>
